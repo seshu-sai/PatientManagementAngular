@@ -1,0 +1,48 @@
+<h2>Patient List</h2>
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter PID" [(ngModel)]="pid"/>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="findPatient(pid)">Search</button>
+        </div>
+      </div>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>PID</th>
+            <th>Patient Name</th>
+            <th>Patient Problem</th>
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor = "let patient of patients">
+        <td> {{patient.pid}} </td>
+        <td> {{patient.patientName}} </td>
+        <td> {{patient.patientProblem}} </td>
+            <td>
+              <button (click)="OnSubmitUpdate()" class="btn btn-info">Update</button>
+            </td>
+            <td>
+                <button (click)="delPatient(patient.pid)" class="btn btn-danger">Delete</button>
+              </td>
+    </tr>
+</tbody>
+<tbody>
+</tbody>
+</table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>PID</th>
+                <th>Patient Name</th>
+                <th>Patient Problem</th>
+            </tr>
+        </thead>
+        <td> {{ patient.pid }} </td>
+        <td> {{ patient.patientName }} </td>
+        <td> {{ patient.patientProblem }} </td>
+    </table>
+
